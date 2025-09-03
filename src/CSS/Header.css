@@ -1,0 +1,202 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.search-box {
+  flex: 1;
+  max-width: 200px;
+  position: relative;
+}
+
+.search-box i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Mobile search toggle button */
+.search-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.logo img {
+  height: clamp(40px, 5vw, 60px);
+  object-fit: contain;
+}
+
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-info {
+  text-align: right;
+  font-size: 13px;
+}
+
+.login-info strong {
+  display: block;
+  font-size: 14px;
+}
+
+.login-info a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.login-info a:hover {
+  color: #fcb900;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: #ddd;
+}
+.user-icon{
+  display: none;
+}
+.icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.badge_top {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #f00;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+.fa-heart{
+  font-size: 25px;
+}
+.fa-heart:hover{
+  color: red;
+}
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 12px 20px;
+  }
+  .search-box {
+    max-width: 280px;
+  }
+  .logo img {
+    height: 50px;
+  }
+  .login-info {
+    display: none; /* hidden on tablets + mobiles */
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .search-box {
+    display: none;
+  }
+  .search-toggle {
+    display: block;
+  }
+  .divider {
+    display: none;
+  }
+  .user-icon {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+  .logo img {
+    height: 40px;
+  }
+  .icons {
+    gap: 10px;
+    font-size: 16px;
+  }
+  .badge_top {
+    font-size: 10px;
+    padding: 1px 5px;
+    top: -5px;
+    right: -8px;
+  }
+}
+
+/* Mobile search dropdown */
+.mobile-search {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.mobile-search i {
+  margin-right: 10px;
+  color: #888;
+}
+
+.mobile-search input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}

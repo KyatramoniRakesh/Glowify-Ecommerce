@@ -1,0 +1,436 @@
+/* ===== Navbar Main Container ===== */
+.menu {
+  padding: 5px;
+  background-color: #fff;
+  position: relative;
+  z-index: 101;
+}
+
+/* ===== Navigation Menu List ===== */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+a{
+  text-decoration: inherit;
+  color: inherit;
+}
+#nav-menu-li {
+  position: relative;
+  font-weight: bold;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+#nav-menu-li:hover,
+#nav-menu-li.active {
+  color: #f33d74;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#nav-menu-li:hover::after,
+#nav-menu-li.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #f33d74;
+  border-radius: 10px;
+}
+
+/* ===== Badges ===== */
+.badge_top {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  color: white;
+}
+
+.badge_top.new {
+  background-color: #00bcd4;
+}
+
+.badge_top.hot {
+  background-color: orange;
+}
+
+.badge_top.sale {
+  background-color: #f44336;
+}
+
+/* ===== Dropdowns ===== */
+.menu-dropdowns {
+  position: relative;
+}
+
+.menu-dropdowns:hover .dropdowns-items,
+.menu-dropdowns:focus .dropdowns-items {
+  display: flex;
+  
+}
+
+.menu-dropdowns:hover .mega-menu,
+.menu-dropdowns:focus .mega-menu {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.menu-dropdowns:hover .makeup-mega-wrapper,
+.menu-dropdowns:focus .makeup-mega-wrapper {
+  display: flex;
+}
+
+.menu-dropdowns:hover .demo-menu,
+.menu-dropdowns:focus .demo-menu {
+  display: block;
+}
+
+/* Dropdown (simple list) */
+.dropdowns-items {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px); 
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  z-index: 200;
+  width: 300px;
+  gap: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.dropdowns-items img {
+  width: 80px;
+}
+
+.dropdowns-items ul li {
+  padding: 5px 0;
+  text-align: left;
+}
+
+/* ===== Mega Menu ===== */
+.mega-menu {
+  display: none;
+  position: fixed;
+  top: 148px;
+  left: 0;
+  width: 100vw;
+  background-color: white;
+  border-top: 1px solid #eee;
+  padding: 30px 40px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+  z-index: 202;
+  gap: 30px;
+  justify-content: flex-start;
+  margin-top: 14px; /* Additional gap for mega menu */
+}
+
+.mega-left {
+  position: relative;
+  padding-left: 90px;
+}
+
+.mega-left img {
+  width: 370px;
+  height: 320px;
+}
+
+.mega-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  gap: 30px;
+  flex: 1;
+  text-align: start;
+  line-height: 18px;
+  color: #000;
+}
+
+.mega-col {
+  min-width: 150px;
+}
+
+.mega-col h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mega-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-col ul li {
+  font-size: 12px;
+  padding: 5px 0;
+  color: #333;
+  opacity: 0.5;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mega-col ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background-color: pink;
+  transition: width 0.3s ease;
+}
+
+.mega-col ul li:hover {
+  color: #EB5279;
+  opacity: 1;
+}
+
+.mega-col ul li:hover::after {
+  width: 45%;
+}
+
+.mega-col h4:hover {
+  color: #EB5279;
+}
+
+/* ===== Promo Banner in Mega Menu ===== */
+.promo-banner {
+  display: flex;
+  gap: 20px;
+}
+
+.promo-banner img {
+  width: 439px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ===== Makeup Mega Menu ===== */
+.makeup-mega-wrapper {
+  display: none;
+  position: fixed;
+  top: 148px;
+  left: 0;
+  width: 100vw;
+  background-color: white;
+  border-top: 1px solid #eee;
+  padding: 30px 160px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+  z-index: 202;
+  gap: 30px;
+  justify-content: flex-start;
+  margin-top: 14px;
+}
+
+.makeup-mega-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 60%;
+  flex: 1;
+  text-align: start;
+  line-height: 18px;
+  color: #000;
+}
+
+.makeup-deal-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  width: 40%;
+}
+
+.top-seller {
+  text-align: center;
+  flex: 1;
+}
+
+.product-image-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  gap: 15px;
+}
+
+.product-image-nav img {
+  height: 130px;
+  width: 130px;
+}
+
+.arrow {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  color: #000;
+}
+
+.top-seller-img {
+  width: 60px;
+  height: auto;
+}
+
+.desc {
+  font-size: 13px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.rating {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.top-seller button {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.top-seller button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.banner-makeup img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#txt {
+  color: black;
+}
+
+/* ===== Beauty Mega Menu Columns ===== */
+.beauty-mega-columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+  width: 100%;
+  flex: 1;
+  text-align: start;
+  line-height: 18px;
+  color: #000;
+  padding: 0 30px;
+}
+
+.shipping {
+  grid-column: 1 / -1;
+  background-color: #fef9c3;
+  padding: 15px;
+  text-align: center;
+}
+
+.shipping p {
+  color: #ec217b;
+  font-size: 14px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ===== Demo / Pages Dropdown ===== */
+.demo-menu {
+  position: absolute;
+  top: calc(100% + 14px); /* Gap below nav item */
+  left: 0;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
+  z-index: 201;
+  display: none;
+  font-size: 12px;
+  width: 300px;
+}
+
+/* Show dropdown on hover/active */
+.menu-dropdowns:hover .demo-menu,
+.menu-dropdowns:focus .demo-menu {
+  display: block;
+}
+
+.demo-main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.demo-main-menu li {
+  padding: 12px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #111;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.has-submenu > .submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: none;
+  z-index: 999;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #111;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+#pages_li {
+  padding: 10px;
+  font-size: 12px;
+}
+
+/* ===== Responsive Navbar ===== */
+@media (max-width:768px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media (max-width:480px) {
+  .menu {
+    display: none;
+  }
+}

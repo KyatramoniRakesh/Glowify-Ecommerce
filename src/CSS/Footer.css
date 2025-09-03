@@ -1,0 +1,284 @@
+
+/* ======Footer =========*/
+
+body {
+  background: #233437;
+  margin: 0;
+  padding: 0;
+  font-family:Arimo;
+}
+
+.footer {
+  background-color: #111;
+  padding: 40px 120px;
+  font-size: 14px;
+  color: white;
+  text-align: start;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  gap: 10px;
+}
+
+.footer-column {
+  margin-bottom: 0;
+}
+
+.footer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.footer-header h4 {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 17px;
+  display: inline-block;
+}
+
+.footer-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 21px;
+  cursor: pointer;
+  min-width: 28px;
+  height: 30px;
+  line-height: 26px;
+  padding: 0;
+  transition: color 0.2s;
+  margin-left: 2px;
+  display: none;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  transition: max-height .3s;
+  overflow: hidden;
+}
+
+.footer-column li {
+  color: #ccc;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.footer-column li:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Newsletter input group */
+.signup-input {
+  margin: 20px 0 0 0;
+  display: flex;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  background: #111;
+}
+
+.signup-input input {
+  background-color: #111;
+  padding: 12px 16px;
+  color: #fff;
+  border: none;
+  flex: 1;
+  font-size: 14px;
+}
+
+.signup-input input::placeholder {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.signup-input button {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.signup-input button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.social-icons {
+  margin-top: 22px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.social-icons i {
+  background: #fff;
+  color: #111;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 21px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  display: inline-block;
+  position: relative;
+}
+
+.social-icons i:hover,
+.social-icons i:focus {
+  box-shadow: 0 0 0 6px green;
+  outline: none;
+  padding:2px;
+
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.footer-bottom-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  text-align: start;
+  color: #ccc;
+  flex-wrap: wrap;
+}
+
+.rights {
+  flex: 1 1 200px;
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.footer-bottom-imgs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 10px;
+  max-width: 530px;
+}
+.footer-bottom-imgs img {
+  width: 43px;
+  height: auto;
+}
+
+/* Collapse/expand icon logic mobile/tablet */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 30px 10px;
+    text-align: start;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .footer-column {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 14px;
+  }
+  .footer-header {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 14px;
+  }
+  .footer-column ul {
+    padding-left: 0;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .footer-column.expanded ul {
+    max-height: 1200px;
+    opacity: 1;
+    pointer-events: auto;
+    margin: 16px 0 0 0;
+  }
+  .footer-bottom-items {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .footer-bottom-imgs {
+    justify-content: flex-start;
+    padding-top: 6px;
+  }
+
+  .footer-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-input input, .signup-input button {
+    font-size: 13px;
+    padding: 10px;
+  }
+  .footer-header h4 {
+    font-size: 16px;
+  }
+  .footer-column ul li {
+    font-size: 13px;
+  }
+  .social-icons i {
+    font-size: 19px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+  
+  .footer-toggle {
+    display: flex;
+  
+}
+
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 16px 2vw;
+  }
+  .footer-header h4 {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .footer-bottom-imgs img {
+    width: 35px;
+  }
+  .signup-input button, .signup-input input {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+  .footer-toggle {
+    display: flex;
+  }
+
+}

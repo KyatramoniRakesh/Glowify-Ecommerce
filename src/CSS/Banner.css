@@ -1,0 +1,183 @@
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide-img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    display: block;
+}
+
+/* Text overlay (common styles) */
+.text-overlay {
+    position: absolute;
+    color: white;
+    width: 600px;
+    background-color: white;
+    color: #333;
+}
+
+.text-overlay h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.text-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.shop-btn {
+    margin-top: 10px;
+    background: black;
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.shop-btn:hover {
+    background: #333;
+
+}
+
+/* Position for slide 1 (centered text) */
+.center-text .text-overlay {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Position for slide 3 (right-aligned text) */
+.right-text .text-overlay {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: right;
+    text-align: center;
+    width: 500px;
+}
+
+/* Hide text for slide 2 */
+.no-text .text-overlay {
+    display: none;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+
+
+}
+
+.arrow.left {
+    left: 15px;
+}
+
+.arrow.right {
+    right: 15px;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active-dot {
+    background: white;
+}
+
+/* Counter */
+.counter {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .arrow {
+        display: none;
+    }
+
+    .slide-img {
+        height: 70vh;
+        object-fit: cover;
+        /* show full image */
+    }
+
+    .text-overlay {
+        max-width: 90%;
+    }
+
+    .text-overlay h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-overlay p {
+        font-size: 1rem;
+    }
+
+    /* On mobile, right-aligned text should center */
+    .right-text .text-overlay {
+        right: 50%;
+        transform: translate(50%, -50%);
+        text-align: center;
+    }
+}
