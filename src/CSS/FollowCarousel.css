@@ -1,0 +1,215 @@
+
+.follow {
+  text-align: center;
+  padding: 20px;
+}
+
+.follow h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.follow p.hashtag {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.follow-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.follow-imgs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+}
+
+.follow-imgs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.follow-imgs img {
+  border-radius: 6px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.follow-imgs img:hover {
+  transform: scale(1.05);
+}
+
+.follow-prev,
+.follow-next {
+  position: absolute;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.follow-prev:hover,
+.follow-next:hover {
+  background: #f0f0f0;
+}
+
+.follow-prev {
+  left: 10px;
+}
+
+.follow-next {
+  right: 10px;
+}
+
+/* Image wrapper for hover effect */
+.follow-img-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.follow-img-wrapper img {
+  border-radius: 6px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay with plus icon */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.plus {
+  font-size: 40px;
+  color: white;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease;
+}
+
+/* Hover Effects */
+.follow-img-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.follow-img-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.follow-img-wrapper:hover .plus {
+  transform: rotate(90deg);
+}
+/* =======================
+   Lightbox (Popup Image)
+======================= */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  animation: zoomIn 0.4s ease;
+}
+.follow-imgs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* Makes iOS swiping smooth */
+}
+
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ===================
+   Responsive
+==================== */
+@media (max-width: 1024px) {
+  .follow-imgs img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .follow h2 {
+    font-size: 20px;
+  }
+
+  .follow-imgs img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .follow-imgs img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .follow-prev,
+  .follow-next {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}

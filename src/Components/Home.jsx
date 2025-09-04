@@ -10,6 +10,7 @@ import TrendCards from "./TrendCards";
 import FeaturedProducts from "./FeaturedProducts";
 import Blog from "./Blog";
 import LogosCarousel from "./BrandLogos";
+import FollowCarousel from "./FollowCarousel";
 
 function Home() {
 
@@ -34,6 +35,7 @@ function Home() {
             < FeaturedProducts />
             <Blog />
             < LogosCarousel />
+            <FollowCarousel />
             <Footer />
         </>
     );
