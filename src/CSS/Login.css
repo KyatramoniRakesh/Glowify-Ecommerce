@@ -1,0 +1,166 @@
+.sidebar-login-container {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 30px;
+}
+
+.sidebar-login-container.open {
+  right: 0;
+}
+
+.sidebar-login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.sidebar-login-header h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.sidebar-login-close {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-login-welcome {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-login-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.sidebar-login-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.sidebar-login-form input:focus {
+  border-color: #ff4dff;
+  outline: none;
+}
+
+.sidebar-login-error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.sidebar-login-btn {
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sidebar-login-btn:hover {
+  background: #ff4dff;
+}
+
+.sidebar-login-forgot {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.sidebar-login-create {
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar-login-create:hover {
+  background: #ff4dff;
+}
+
+
+
+.sidebar-login-container {
+  position: fixed;
+  top: 0;
+  right: -450px; /* hidden initially */
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.3s ease; /* smooth slide */
+  z-index: 9999;
+  text-align: left;
+}
+
+.sidebar-login-container.open {
+  right: 0; 
+}
+
+.sidebar-login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-login-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar-login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.sidebar-login-form input {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.sidebar-login-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-login-btn,
+.sidebar-login-create {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
